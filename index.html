@@ -1,12 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors (Console Version) </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
 </head>
+
 <body>
-    Hello
+    <main>
+        <h1>Rock Paper Scissors</h1>
+
+        <section id="controls" aria-label="Choose your move">
+            <button type="button" data-move="rock">Rock</button>
+            <button type="button" data-move="paper">Paper</button>
+            <button type="button" data-move="scissors">Scissors</button>
+        </section>
+
+        <section id="status">
+            <p id="score"></p>
+            <p id="result"></p>
+        </section>
+
+        <button type="button" id="reset">Reset</button>
+    </main>
+
     <script src="script.js"></script>
 </body>
+
 </html>
+
+<!--
+========================================
+ROCK PAPER SCISSORS — HTML NOTES
+========================================
+
+GENERAL RULES
+- HTML = structure & meaning
+- JavaScript = behaviour
+- CSS = appearance
+- Avoid using <div> when a semantic tag exists
+
+----------------------------------------
+SEMANTIC ELEMENTS USED
+----------------------------------------
+
+<main>
+- Main content of the page
+- Helps screen readers and document structure
+
+<section>
+- Groups related content
+- Used for controls and status output
+
+<p>
+- Used for text content (score, result)
+- Better than <div> for readable information
+
+<button>
+- Interactive elements
+- Always use type="button" unless submitting a form
+
+----------------------------------------
+DATA ATTRIBUTES (IMPORTANT)
+----------------------------------------
+
+data-move="rock"
+- Custom data attribute for JavaScript
+- Read via element.dataset.move
+- Keeps JS logic independent of text, classes, or IDs
+
+Rule:
+- data-* = meaning for JavaScript
+- id = unique element
+- class = styling only
+
+----------------------------------------
+WHY THESE IDS EXIST
+----------------------------------------
+
+id="score"
+- Used by JS to display running score
+
+id="result"
+- Used by JS to display round result / game status
+
+id="reset"
+- Used by JS to attach reset behaviour
+
+----------------------------------------
+SCRIPT PLACEMENT
+----------------------------------------
+
+<script src="script.js"></script>
+- Placed at end of <body>
+- Ensures DOM exists before querySelector runs
+
+----------------------------------------
+MENTAL MODEL
+----------------------------------------
+
+- HTML creates placeholders
+- JS stores references to them
+- JS updates textContent to reflect state
+
+========================================
+END NOTES
+========================================
+-->
